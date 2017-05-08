@@ -1,0 +1,16 @@
+﻿create table tbl_user (
+	id varchar(50) NOT NULL,
+	pw varchar(50) NOT NULL,
+	name varchar(100) NOT NULL,
+	email varchar(50) NOT NULL,
+	logindate varchar(20),
+	primary key(uid)
+);
+
+
+
+insert into tbl_user(id, upw, uname) value('user00', '1234', 'IRON MAN');
+insert into tbl_user(id, upw, uname) value('user01', '1234', 'CAPTAIN');
+insert into tbl_user(id, upw, uname) value('user02', '1234', 'HULK');
+insert into tbl_user(id, upw, uname) value('user03', '1234', 'THor');
+insert into tbl_user(id, upw, uname) value('user04', '1234', 'Quick Silver');

@@ -1,0 +1,23 @@
+
+/*! jQuery UI - v1.12.1 - 2017-04-20
+* young hwan. Kim
+* Includes: draggable.css, core.css, resizable.css, selectable.css, sortable.css, accordion.css, autocomplete.css, menu.css, button.css, controlgroup.css, checkboxradio.css, datepicker.css, dialog.css, progressbar.css, selectmenu.css, slider.css, spinner.css, tabs.css, tooltip.css
+* Copyright jQuery Foundation and other contributors; Licensed MIT */ 
+ 
+  header {
+            width : 100%;
+            margin: 0 auto;
+            border : 1px solid #cccccc;
+  }
+
+  #content {
+      width : 85%;
+      margin: 0 auto;
+      /* border : 1px solid #cccccc; */
+  }
+
+  footer {
+      width : 100%;
+      margin: 0 auto;
+      border : 1px solid #cccccc;
+  }

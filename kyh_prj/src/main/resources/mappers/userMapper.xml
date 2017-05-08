@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.kyh.mappers.userMapper">
+
+
+	<select id="allList" resultType="UserVO">
+		select * from tbl_user
+	</select>
+
+	<insert id="create">
+ 		insert into 
+ 			tbl_user (id, pwd, name, email, logindate )
+ 		values( #{id}, #{pwd}, #{name}, #{email}  )
+ 	</insert>
+
+	<!-- <select id="login"  resultType="UserVO">
+		select uid, upw, uname 
+		from tbl_user 
+			where uid = #{uid} and upw = #{upw}
+	</select> -->
+  
+</mapper>

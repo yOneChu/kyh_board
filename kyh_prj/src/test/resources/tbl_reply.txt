@@ -1,0 +1,16 @@
+﻿create table tbl_reply (
+rno int NOT NULL AUTO_INCREMENT,
+bno int NOT NULL default 0,
+replytext varchar(1000) not null,
+replyer varchar(50) not null,
+regdate TIMESTAMP NOT NULL default now(),
+updatedate TIMESTAMP NOT NULL default now(),
+PRIMARY KEY(rno)
+);
+
+
+
+alter table tbl_reply add CONSTRAINT fk_board 
+FOREIGN KEY (bno) REFERENCES tbl_board (bno);
+
+alter table tbl_board add column replycnt int default 0;
