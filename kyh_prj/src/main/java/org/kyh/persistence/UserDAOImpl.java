@@ -22,7 +22,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<UserVO> allList() throws Exception {
 		return sqlSession.selectList(namespace + ".allList");
 	}
-
+	
 	
 	
 }

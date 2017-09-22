@@ -8,10 +8,12 @@
 </head>
 <body>
 
+<div id="header">
 
 	<header>
 		this is header
 	</header>
+	
  <nav class="navbar navbar-default">
   <div class="container-fluid">
   
@@ -99,6 +101,7 @@
 </nav>
 
 
+</div>
 
 </body>
 </html>

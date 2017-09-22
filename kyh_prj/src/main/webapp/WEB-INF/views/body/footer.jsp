@@ -6,10 +6,14 @@
 </head>
 <body>
 
-    <footer class=".navbar-fixed-bottom"> 
-		<p class="text-success"> CEO : Kim Young Hwan - 2017.04</p>
- 	</footer>
 
+	<div id="footer">
 
+	    <footer class=".navbar-fixed-bottom"> 
+			<p class="text-success"> CEO : Kim Young Hwan - 2017.04</p>
+	 	</footer>
+
+	</div>
+	
 </body>
 </html>

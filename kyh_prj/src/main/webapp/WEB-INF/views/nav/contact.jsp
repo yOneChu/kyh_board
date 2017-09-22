@@ -66,7 +66,7 @@
 <body>
 
 	<%@include file="../body/header.jsp" %>
-
+	
     
     <div id="content">
 		<div class="jumbotron">
@@ -81,6 +81,6 @@
 
 <!--  <footer class=".navbar-fixed-bottom"> footer </footer> -->
     
-
+	
 </body>
 </html>

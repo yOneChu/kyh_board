@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -64,35 +65,24 @@
 	$(document).ready(function(){
 		
 		
-		var gridData = [{seq:"1",create_date:"2007-10-01",create_name:"test",title:"note",hitnum:"11"},
-		                 {seq:"2",create_date:"2007-10-02",create_name:"test2",title:"note2",hitnum:"22"}];
+		//var gridData = [{seq:"1",create_date:"2007-10-01",create_name:"test",title:"note",hitnum:"11"},
+		 //                {seq:"2",create_date:"2007-10-02",create_name:"test2",title:"note2",hitnum:"22"}];
 		
 		
 		jQuery("#list1").jqGrid({
-			//width: $(window).width()-235,
-			//height: $(window).height()-126,
+			//height: 250,
 		   	//url:'/user/test',
-		   	//url : 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
-		    datatype: 'local',
-		    height: 250,
-		   /* 	colNames:['oid', 'ID', 'NAME', 'EMAIL'],
-		   	colModel:[
-				  {name:'oid',index:'oid', width:'0%', hidden: true, editable:true}
-				, {name:'id',index:'id', width:'10%', align:'center', editable: true}
-				, {name:'name',index:'name', width:'10%', align:'center', editable: true}
-	            , {name:'email',index:'email', width:'10%', align:'center', editable: true}
-		   	], */
-		    colNames:['NO','ID', '이름', '등록자명','조회수'],
-            colModel:[
-                {name:'seq'},
-                {name:'title'},
-                {name:'create_date'},
-                {name:'create_name'},
-                {name:'hitnum'}
-            ], 
+		    datatype: 'xml',
+		    mtype: "GET",
+		    colNames:['NO','ID', '이름', '이메일','조회수'],
+            colModel:[ 
+                {name:'seq', align : 'center' },
+                {name:'id', align : 'center' },
+                {name:'name', align : 'center' },
+                {name:'email'}
+            ],
 		   	rowNum:15,
 			rowList : [15,30,45],
-		   //	mtype: "GET",
 			//rownumbers: true,
 			rownumWidth: 40,
 			gridview: true,
@@ -100,23 +90,16 @@
 		    viewrecords: true,
 		   // multiselect: true,
 			toolbar: [true,"top"],
-			caption: "PEL 정합성 검증 관리",
+			caption: "사용자 정보",
 			emptyrecords: "조회된 데이터가 없습니다."
-			//gridComplete:function(){
-				//var tm = jQuery("#list").jqGrid('getGridParam','totaltime');
-			//},
- 		   	//ondblClickRow: function(rowId, iRow, iCol, e) {
- 		   		//var pvmOid = jQuery("#list").jqGrid('getCell', rowId, 'oid');
- 		   		//var folderName = jQuery("#list").jqGrid('getCell', rowId, 'folderName');
- 		   		//self.location.href = '../../pel/select/upm.do?pvmOid='+pvmOid;
-			//}
-			
 		});
 		
-		for(var i=0;i<=gridData.length;i++){
-	            //jqgrid의 addRowData를 이용하여 각각의 row에 gridData변수의 데이터를 add한다
-	            $("#list1").jqGrid('addRowData',i+1,gridData[i]);
-	    }
+		
+		jQuery("#list1").jqGrid('navGrid', '#pager2', {edit:false, add:false, del:false});
+		
+		//for(var i=0;i<=gridData.length;i++){
+	           // $("#list1").jqGrid('addRowData',i+1,gridData[i]);  //jqgrid의 addRowData를 이용하여 각각의 row에 gridData변수의 데이터를 add한다
+	   // }
 		
 	});
 </script>
