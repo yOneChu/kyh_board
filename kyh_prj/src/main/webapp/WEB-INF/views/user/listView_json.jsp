@@ -1,5 +1,4 @@
 <%@page import="org.kyh.domain.UserVO"%>
-<%@page import="org.json.simple.JSONArray"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
@@ -8,9 +7,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-
-	System.out.println("----------- listView_json.jsp -----------------");
-
 	out.clear();
 	
 	List<UserVO> result = (List<UserVO>)request.getAttribute("userList");

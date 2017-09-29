@@ -6,21 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<!-- 
-<link rel="stylesheet" media="screen" href="/resources/basic_layout.css" />
-<script src='/resources/bootstrap/js/jQuery-2.1.4.min.js'></script>
-<script src='/resources/bootstrap/js/bootstrap.min.js'></script>
-	 -->
-<script src='/resources/bootstrap/js/jQuery-2.1.4.min.js'></script>
+<script src='/resources/bootstrap/js/jQuery-2.1.4.min.js'></script> <!-- datatable --
 
 
-<script src='/resources/bootstrap/js/bootstrap.min.js'></script>
 <!-- basic layout CSS -->
 <link rel="stylesheet" media="screen" href="/resources/basic_layout.css" />
 
 <link rel="stylesheet" media="screen" href="/resources/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" media="screen" href="/resources/bootstrap/css/bootstrap.min.css" />
-
 
 
 	
@@ -71,8 +64,6 @@
 		
 		$('#example').DataTable({
 			pageLength : 10,
-			//responsive : true,
-			//data : data,
 		 	ajax : {
 				url :  "/user/listView",
 				type : "POST",
@@ -87,8 +78,21 @@
 				{ data : "id" },
 				{ data : "name" },
 				{ data : "email" }
+			],
+			buttons : [
+				'excel',
+				'print'
 			]
 		});
+		
+		
+	    $('#example tbody')
+        .on( 'mouseenter', 'td', function () {
+            var colIdx = table.cell(this).index().column;
+ 
+            //$( table.cells().nodes() ).removeClass( 'highlight' );
+           // $( table.column( colIdx ).nodes() ).addClass( 'highlight' );
+        } );
 		
 	});
 
