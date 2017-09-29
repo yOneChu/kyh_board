@@ -56,24 +56,20 @@ public class UserController {
 	
 	@RequestMapping(value="/listView")
 	public String userList(HttpServletRequest request, Model model) throws Exception {
+		//logger.info("------------ userList -------------");
 		
-		logger.info("------------ userList -------------");
-		
-		List<Map<String, Object>> resultList = new ArrayList<>();
 		List<UserVO> userList = null;
 		
-		JSONObject jsonObj	=	new JSONObject();
-		JSONArray jsonArray	=	new JSONArray();
-		
 		try {
-			userList = userService.listAll();
+			userList = userService.listAll();  
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		//logger.info("jsonArray ------> " + jsonArray);
-		
 		request.setAttribute("userList", userList);
+		model.addAttribute("resultList", userList);
+		
 		return "/user/listView_json";
 	}
 	
